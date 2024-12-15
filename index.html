@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pokémon Treasure Hunt</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game">
+    <h1>Pokémon Treasure Hunt</h1>
+    <p>Answer the questions below to unlock puzzle blocks and complete the picture!</p>
+    
+    <div id="questions">
+      <div class="question" id="question1">
+        <p>What is H<sub>2</sub>O?</p>
+        <input type="text" id="answer1" placeholder="Type your answer">
+        <button onclick="checkAnswer(1, 'water')">Submit</button>
+      </div>
+      <div class="question" id="question2">
+        <p>What type of Pokémon is Pikachu?</p>
+        <input type="text" id="answer2" placeholder="Type your answer">
+        <button onclick="checkAnswer(2, 'electric')">Submit</button>
+      </div>
+      <div class="question" id="question3">
+        <p>What color is a Pokéball?</p>
+        <input type="text" id="answer3" placeholder="Type your answer">
+        <button onclick="checkAnswer(3, 'red')">Submit</button>
+      </div>
+    </div>
+
+    <div id="puzzle">
+      <p>Drag the unlocked blocks to complete the picture:</p>
+      <div id="blocks">
+        <div class="block" id="block1" draggable="true" ondragstart="drag(event)">?</div>
+        <div class="block" id="block2" draggable="true" ondragstart="drag(event)">?</div>
+        <div class="block" id="block3" draggable="true" ondragstart="drag(event)">?</div>
+      </div>
+      <div id="canvas" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <!-- The puzzle will be assembled here -->
+      </div>
+    </div>
+
+    <div id="clue" class="hidden">
+      <h2>Congratulations!</h2>
+      <p>Go to Bhaiya's mirror for further instructions.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
